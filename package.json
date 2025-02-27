@@ -15,5 +15,8 @@
     "url": "https://github.com/JeonSunil/express/issues"
   },
   "homepage": "https://github.com/JeonSunil/express#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
