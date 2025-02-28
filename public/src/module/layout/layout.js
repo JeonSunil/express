@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+function layout(File) {
+  return `
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./public/style/style.css">
 </head>
 <body>
   <main>
@@ -26,7 +28,11 @@
     
   </main>
 
-  <script type="module" src="./src/dataAdd.js" ></script>
+  <script type="module" src="${File}" ></script>
   
 </body>
 </html>
+  `
+}
+
+module.exports = layout;
