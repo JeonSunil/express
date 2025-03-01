@@ -2,7 +2,7 @@ const qs = require('querystring');
 const fs = require('fs');
 const layout = require('./layout/layout');
 
-function deleteDataForm(req, res, i) {
+function deleteForm(req, res, i) {
 
 req.on('data', function() {
   // post로 데이터를 받아 올 때, 기능을 추가하는 코드
@@ -17,13 +17,7 @@ req.on('data', function() {
   fs.writeFileSync('./data/data.json', JSON.stringify(jsonData, null, 2), 'utf-8');
   // data.json파일의 내용을 덮어씌우는데, 위에서 수정한 jsonData의 데이터를 집어넣는다.
 });
-req.on('end', function() {
-  res.writeHead(200, {'content-type': 'text/html; charset=utf-8'});
-  res.write(layout('./public/src/module/layout/complete/completeDelete.js'));
-  // 위의 행동이 끝나면 데이터가 성공적으로 삭제되었습니다. 라는 문구가 나온다.
-  res.end();
 
-})
 }
 
-module.exports = deleteDataForm;
+module.exports = deleteForm;

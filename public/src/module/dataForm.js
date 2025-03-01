@@ -35,10 +35,8 @@ req.on('data', function(data) {
   fs.writeFileSync('./data/data.json', JSON.stringify(dataArr, null, 2), 'utf-8');
   // 위에서 만들어진 파싱된 데이터가 들어있는 배열을 data.json 파일을 생성 해준다.
   }
-})
-req.on('end', function() {
-  resForm(res, 200, 'html', layout('./public/src/module/layout/complete/completeAdd.js'));
-})
+});
+
 }
 
 module.exports = dataForm;
