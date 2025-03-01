@@ -58,3 +58,8 @@ app.post('/delete*', function(req,res) {
 });
 
 // 이제 지정하지 않은 url에 대한 err핸들링을 해 줘야 할듯.
+app.get('/*', function(req, res) {
+  // get요청에서, /* 카드로, /이후로 들어오는 모든 요청에 대한 응답으로 설정하고,
+  res.sendFile(__dirname + '/public/err.html');
+  // 응답하는 파일을 에러 화면으로 떠오르게 만들었다.
+});
